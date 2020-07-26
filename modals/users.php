@@ -17,6 +17,9 @@ class Users{
 	*
 	*/
 	function create_user($name){
+		if(str_replace(' ', '', $name)==""){
+				return 'No se puede incluir este usuario';
+		}
 		foreach ($_SESSION['users'] as $key => $value) {
 			if($value['nombre']==$name){
 				return 'Nombre ya es cogido';
